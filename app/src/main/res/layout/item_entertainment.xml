@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_14">
+
+    <ImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="@dimen/dp_134"
+        android:layout_height="@dimen/dp_96"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@color/color999999" />
+
+    <ImageView
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:src="@drawable/icon_video_play"
+        app:layout_constraintBottom_toBottomOf="@id/iv_cover"
+        app:layout_constraintLeft_toLeftOf="@id/iv_cover"
+        app:layout_constraintRight_toRightOf="@id/iv_cover"
+        app:layout_constraintTop_toTopOf="@id/iv_cover" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_14"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color666666"
+        android:textSize="@dimen/font_15"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@id/tv_category"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toRightOf="@id/iv_cover"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="协助老人床与轮椅间转协助老人床与轮椅间转" />
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/corners_4_stroke_1_cccccc"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingStart="@dimen/dp_6"
+        android:paddingEnd="@dimen/dp_6"
+        android:textColor="@color/color999999"
+        android:textSize="@dimen/font_13"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@id/tv_duration"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="@id/tv_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="生活照料生活照料生活照料生活照料" />
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color666666"
+        android:textSize="@dimen/font_13"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="@id/tv_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_category"
+        tools:text="视频时长：05:31视频时长：05:31" />
+</androidx.constraintlayout.widget.ConstraintLayout>

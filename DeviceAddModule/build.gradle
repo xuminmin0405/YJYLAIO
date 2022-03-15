@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    sourceSets {
+        main.res.srcDirs = ['src/main/res',
+                            'src/main/res/lc',
+                            'src/main/res/lc/drawable',
+                            'src/main/res/lc/drawable-hdpi',
+                            'src/main/res/lc/drawable-xhdpi',
+                            'src/main/res/lc/drawable-xxhdpi',
+                            'src/main/res/lc/anim',
+                            'src/main/res/lc/color',
+                            'src/main/res/lc/values',
+                            'src/main/res/lc/values-en',
+                            'src/main/res/lc/layout']
+    }
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+
+    api project(':third-zxing')
+    api "org.greenrobot:eventbus:3.0.0"
+    api 'com.google.code.gson:gson:2.8.1'
+
+    api "androidx.recyclerview:recyclerview:1.0.0-alpha1"
+    api "androidx.legacy:legacy-support-v4:1.0.0-alpha1"
+    api "androidx.appcompat:appcompat:1.0.0-alpha1"
+    api "androidx.cardview:cardview:1.0.0-alpha1"
+    api "com.google.android.material:material:1.0.0-alpha1"
+    api 'androidx.constraintlayout:constraintlayout:1.1.2'
+    api files('libs/PullToRefreshListView-release.aar')
+    api files('libs/DHMobileToolset-1.1.1.aar')
+    api files('libs/DHScanner-1.0.7.aar')
+    api 'com.alibaba:arouter-api:1.4.1'
+    api 'com.alibaba:arouter-annotation:1.0.6'
+}
+configurations {
+    all*.exclude group: 'com.google.zxing'
+}

@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <attr format="reference" name="abstractWheelViewStyle"/>
+    <attr format="color" name="mainColor"/>
+    <attr format="dimension" name="titleHeight"/>
+    <color name="c0">#F18D00</color>
+    <color name="c1">#F18D00</color>
+    <color name="c10">#FFFFFF</color>
+    <color name="c12">#FF4F4F</color>
+    <color name="c14">#7FF18D00</color>
+    <color name="c15">#7FF18D00</color>
+    <color name="c2">#2C2C2C</color>
+    <color name="c20">#f18d00</color>
+    <color name="c3">#C8D1E6</color>
+    <color name="c32">#4F78FF</color>
+    <color name="c40">#2C2C2C</color>
+    <color name="c41">#8F8F8F</color>
+    <color name="c42">#C2C2C2</color>
+    <color name="c43">#FFFFFF</color>
+    <color name="c5">#888888</color>
+    <color name="c50">#3E3E3E</color>
+    <color name="c51">#7F000000</color>
+    <color name="c53">#E0E0E0</color>
+    <color name="c6">#CCCCCC</color>
+    <color name="c7">#F7F7F7</color>
+    <color name="c8">#F2F2F2</color>
+    <color name="cf4">#FF4F4F</color>
+    <color name="colorPrimary">#ff000000</color>
+    <color name="colorPrimaryDark">#ff000000</color>
+    <color name="color_0fff">#00ffffff</color>
+    <color name="color_F6F6F6">#F6F6F6</color>
+    <color name="lc_color_4ea7f2">#4ea7f2</color>
+    <color name="mobile_common_transparent">#00000000</color>
+    <color name="transparent">#00000000</color>
+    <declare-styleable name="CircleCountDownView">
+        <!--颜色-->
+        <attr format="color|reference" name="ringColor"/>
+        <attr format="color|reference" name="ringbgColor"/>
+        <!-- 进度文本的字体大小 -->
+        <attr format="dimension|reference" name="progressTextSize"/>
+        <!-- 圆环宽度 -->
+        <attr format="dimension|reference" name="ringWidth"/>
+        <!--进度文本颜色-->
+        <attr format="color|reference" name="progressTextColor"/>
+        <!--倒计时-->
+        <attr format="integer" name="countdownTime"/>
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr format="dimension" name="civ_border_width"/>
+        <attr format="color" name="civ_border_color"/>
+        <attr format="boolean" name="civ_border_overlay"/>
+        <attr format="color" name="civ_fill_color"/>
+        <attr format="color" name="civ_circle_background_color"/>
+    </declare-styleable>
+    <declare-styleable name="CommonRatioImageView">
+        <attr format="dimension" name="width_relative"/>
+        <attr format="dimension" name="height_relative"/>
+
+    </declare-styleable>
+    <declare-styleable name="CommonTitle">
+        <attr format="reference" name="titleText"/>
+        <attr format="reference" name="left_selector"/>
+        <attr format="reference" name="right_selector"/>
+
+        <attr format="boolean" name="right_selector_visible"/>
+        <attr format="boolean" name="left_selector_visible"/>
+        <attr format="reference" name="title_background"/>
+    </declare-styleable>
+    <declare-styleable name="DayPickerView">
+        <attr format="color" name="colorSelectedBgThis"/>
+        <attr format="color" name="colorSelectedBgLast"/>
+        <attr format="color" name="colorSelectedBg1"/>
+        <attr format="color" name="colorSelectedBg2"/>
+        <attr format="color" name="colorSelectedBg3"/>
+        <attr format="boolean" name="drawRoundRect"/>
+        <attr format="boolean" name="modeOfDay"/>
+        <attr format="color" name="colorEnableDay"/>
+        <attr format="color" name="colorNormalDay"/>
+        <attr format="color" name="colorMonthName"/>
+        <attr format="color" name="colorDayName"/>
+        <attr format="dimension" name="textSizeDay"/>
+        <attr format="dimension" name="textSizeMonth"/>
+        <attr format="dimension" name="textSizeDayName"/>
+        <attr format="dimension" name="headerMonthHeight"/>
+        <attr format="dimension" name="selectedDayRadius"/>
+        <attr format="dimension" name="calendarHeight"/>
+
+    </declare-styleable>
+    <declare-styleable name="EmptyView">
+        <attr format="reference" name="image_bg"/> <!-- image background -->
+        <attr format="dimension" name="first_text_size"/> <!-- first text size -->
+        <attr format="color" name="first_text_color"/> <!-- first text color -->
+        <attr format="string" name="first_text"/> <!-- first text -->
+        <attr format="dimension" name="second_text_size"/> <!-- second text size -->
+        <attr format="color" name="second_text_color"/> <!-- second text color -->
+        <attr format="string" name="second_text"/> <!-- first text -->
+    </declare-styleable>
+    <declare-styleable name="FilletCornerImageView">
+        <attr format="color" name="fillet_border_color"/>
+        <attr format="color" name="fillet_border_color_selected"/>
+        <attr format="color" name="fillet_border_color_normal"/>
+        <attr format="dimension" name="fillet_border_width"/>
+        <attr format="dimension" name="fillet_radius"/>
+        <attr format="enum" name="fillet_shape_type">
+            <enum name="none" value="0"/>
+            <enum name="round" value="1"/>
+            <enum name="rectangle" value="2"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="JazzyViewPager">
+        <attr name="JazzyViewPagerstyle">
+            <enum name="standard" value="0"/>
+            <enum name="tablet" value="1"/>
+            <enum name="cubein" value="2"/>
+            <enum name="cubeout" value="3"/>
+            <enum name="flipvertical" value="4"/>
+            <enum name="fliphorizontal" value="5"/>
+            <enum name="stack" value="6"/>
+            <enum name="zoomin" value="7"/>
+            <enum name="zoomout" value="8"/>
+            <enum name="rotateup" value="9"/>
+            <enum name="rotatedown" value="10"/>
+            <enum name="accordion" value="11"/>
+        </attr>
+        <attr format="boolean" name="FadeEnabled"/>
+        <attr format="boolean" name="outlineEnabled"/>
+        <attr format="color|reference" name="outlineColor"/>
+    </declare-styleable>
+    <declare-styleable name="LineChart">
+        <attr format="boolean" name="god_mode"/>
+    </declare-styleable>
+    <declare-styleable name="MLBorderImageView">
+        <attr format="color" name="border_color"/>
+        <attr format="color" name="border_color_selected"/>
+        <attr format="color" name="border_color_normal"/>
+        <attr format="dimension" name="border_width"/>
+        <attr format="dimension" name="radius"/>
+        <attr format="enum" name="shape_type">
+            <enum name="none" value="0"/>
+            <enum name="round" value="1"/>
+            <enum name="rectangle" value="2"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="MLImageView">
+
+        <attr format="color" name="ml_border_color"/>
+        <attr format="dimension" name="ml_border_width"/>
+        <attr format="integer" name="ml_press_alpha"/>
+        <attr format="color" name="ml_press_color"/>
+        <attr format="dimension" name="ml_radius"/>
+        <attr format="enum" name="ml_shape_type">
+
+            <enum name="none" value="0"/>
+            <enum name="round" value="1"/>
+            <enum name="rectangle" value="2"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="MobileCommonAbstractWheelView">
+        <attr format="integer" name="visibleItems"/>
+        <attr format="boolean" name="isAllVisible"/>
+        <attr format="integer" name="itemOffsetPercent"/>
+        <attr format="dimension" name="itemsPadding"/>
+        <attr format="integer" name="selectionDividerDimmedAlpha"/>
+        <attr format="integer" name="selectionDividerActiveAlpha"/>
+        <attr format="reference" name="selectionDivider"/>
+        <attr format="integer" name="itemsDimmedAlpha"/>
+        <attr format="boolean" name="isCyclic"/>
+    </declare-styleable>
+    <declare-styleable name="MobileCommonWheelHorizontalView">
+        <attr format="dimension" name="selectionDividerWidth"/>
+    </declare-styleable>
+    <declare-styleable name="MobileCommonWheelVerticalView">
+        <attr format="dimension" name="selectionDividerHeight"/>
+    </declare-styleable>
+    <declare-styleable name="SlidingUpPanelLayout">
+        <attr format="dimension" name="umanoPanelHeight"/>
+        <attr format="dimension" name="umanoShadowHeight"/>
+        <attr format="dimension" name="umanoParallaxOffset"/>
+        <attr format="color" name="umanoFadeColor"/>
+        <attr format="integer" name="umanoFlingVelocity"/>
+        <attr format="reference" name="umanoDragView"/>
+        <attr format="reference" name="umanoScrollableView"/>
+        <attr format="boolean" name="umanoOverlay"/>
+        <attr format="boolean" name="umanoClipPanel"/>
+        <attr format="float" name="umanoAnchorPoint"/>
+        <attr format="enum" name="umanoInitialState">
+            <enum name="expanded" value="0"/>
+            <enum name="collapsed" value="1"/>
+            <enum name="anchored" value="2"/>
+            <enum name="hidden" value="3"/>
+        </attr>
+        <attr format="reference" name="umanoScrollInterpolator"/>
+    </declare-styleable>
+    <declare-styleable name="SwipeLayout">
+        <attr format="enum" name="drag_edge">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+            <enum name="top" value="2"/>
+            <enum name="bottom" value="3"/>
+        </attr>
+        <attr format="enum" name="show_mode">
+            <enum name="lay_down" value="0"/>
+            <enum name="pull_out" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="TimeBar">
+
+        <attr format="color" name="background_color"/>            <!-- background color -->
+        <attr format="color" name="fill_color"/>                <!-- fill color -->
+        <attr format="color" name="scale_text_color"/>            <!-- scale_text color -->
+        <attr format="color" name="thumb_color"/>            <!-- thumb color -->
+        <attr format="dimension" name="fill_height"/>        <!-- fill height -->
+        <attr format="dimension" name="scale_text_size"/>    <!-- scale_text size -->
+        <attr format="dimension" name="date_text_size"/>    <!-- date_text size -->
+        <attr format="color" name="date_text_color"/>        <!-- date_text color -->
+        <attr format="integer" name="max_time">
+     
+            <enum name="hour_24" value="24"/>                        <!-- 24小时 -->
+            <enum name="hour_48" value="48"/>                        <!-- 48小时 -->
+        </attr>        <!-- max hour -->
+    </declare-styleable>
+    <declare-styleable name="WheelPicker">
+        <attr format="integer" name="halfVisibleItemCount"/>
+        <attr format="dimension" name="itemTextSize"/>
+        <attr format="color" name="itemTextColor"/>
+        <attr format="boolean" name="textGradual"/>
+        <attr format="color" name="selectedTextColor"/>
+        <attr format="dimension" name="selectedTextSize"/>
+        <attr format="color" name="selectedBorderColor"/>
+        <attr format="integer" name="currentItemPosition"/>
+        <attr format="dimension" name="itemWidthSpace"/>
+        <attr format="dimension" name="itemHeightSpace"/>
+        <attr format="boolean" name="zoomInSelectedItem"/>
+        <attr format="boolean" name="wheelCyclic"/>
+        <attr format="string" name="indicatorText"/>
+        <attr format="dimension" name="indicatorTextSize"/>
+        <attr format="color" name="indicatorTextColor"/>
+    </declare-styleable>
+    <dimen name="add_device_common_coutdownview_height">80dp</dimen>
+    <dimen name="add_device_common_edit_height">49dp</dimen>
+    <dimen name="add_device_common_margin_10">10dp</dimen>
+    <dimen name="add_device_common_margin_15">15dp</dimen>
+    <dimen name="add_device_common_margin_25">25dp</dimen>
+    <dimen name="add_device_common_margin_35">35dp</dimen>
+    <dimen name="add_device_common_margin_5">5dp</dimen>
+    <dimen name="add_device_common_margin_56">56dp</dimen>
+    <dimen name="add_device_common_margin_8">8dp</dimen>
+    <dimen name="add_device_common_tip_img_height">220dp</dimen>
+    <dimen name="add_device_qrcode_tip_img_height">100dp</dimen>
+    <dimen name="add_device_qrcode_tip_img_width">213dp</dimen>
+    <dimen name="btn_height">44dp</dimen>
+    <dimen name="common_divider_wider">0.5dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_45">45dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="f0">20sp</dimen>
+    <dimen name="f1">17sp</dimen>
+    <dimen name="f2">15sp</dimen>
+    <dimen name="f3">13sp</dimen>
+    <dimen name="header_footer_left_right_padding">24dp</dimen>
+    <dimen name="header_footer_top_bottom_padding">12dp</dimen>
+    <dimen name="indicator_corner_radius">12dp</dimen>
+    <dimen name="indicator_internal_padding">4dp</dimen>
+    <dimen name="indicator_right_padding">10dp</dimen>
+    <dimen name="margin_normal">10dp</dimen>
+    <dimen name="mobile_common_common_title_height">48dp</dimen>
+    <dimen name="mobile_common_common_title_text_size_large">18sp</dimen>
+    <dimen name="mobile_common_common_title_text_size_mid">15sp</dimen>
+    <dimen name="mobile_common_divider_wider">0.5dp</dimen>
+    <dimen name="mobile_common_dp_10">10dp</dimen>
+    <dimen name="mobile_common_dp_20">20dp</dimen>
+    <dimen name="mobile_common_dp_30">30dp</dimen>
+    <dimen name="mobile_common_dp_5">5dp</dimen>
+    <dimen name="mobile_common_dp_6">6dp</dimen>
+    <dimen name="mobile_common_dp_8">8dp</dimen>
+    <dimen name="mobile_common_lc_alert_dialog_button_text_size">17sp</dimen>
+    <dimen name="mobile_common_page_margin">15dp</dimen>
+    <dimen name="mobile_common_sp_16">16sp</dimen>
+    <dimen name="mobile_common_sp_17">17sp</dimen>
+    <dimen name="mobile_common_sp_18">18sp</dimen>
+    <dimen name="mobile_common_text_size_mid">15sp</dimen>
+    <dimen name="mobile_common_text_size_small">12sp</dimen>
+    <dimen name="mobile_common_title_height">50dp</dimen>
+    <dimen name="page_margin">15dp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="t0">35sp</dimen>
+    <dimen name="t1">20sp</dimen>
+    <dimen name="t2">17sp</dimen>
+    <dimen name="t3">16sp</dimen>
+    <dimen name="t4">15sp</dimen>
+    <dimen name="t5">14sp</dimen>
+    <dimen name="t6">12sp</dimen>
+    <dimen name="t7">9sp</dimen>
+    <dimen name="t8">11sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_mid">15sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="wheel_picker_selected_text_size">22sp</dimen>
+    <dimen name="wheel_picker_text_size">20sp</dimen>
+    <string name="account_not_has">账号不存在，请先注册</string>
+    <string name="add_box_tip" translatable="false">添加前请确保盒子能正常工作：</string>
+    <string name="add_box_tip1" translatable="false">① 插上电源，乐盒指示灯显示为白色</string>
+    <string name="add_box_tip2" translatable="false">② 连上可用网络</string>
+    <string name="add_box_tip_confirm_btn" translatable="false">已确认，开始添加</string>
+    <string name="add_device_about_wifi_pwd">关于热点密码</string>
+    <string name="add_device_add_ap_upper_limit">添加配件已达上限</string>
+    <string name="add_device_add_bySn">序列号</string>
+    <string name="add_device_add_by_soft_ap">软AP添加</string>
+    <string name="add_device_add_by_sound_wave">声波添加</string>
+    <string name="add_device_add_by_wired">有线添加</string>
+    <string name="add_device_add_successfully">添加成功!</string>
+    <string name="add_device_add_title">请选择添加方式</string>
+    <string name="add_device_add_volume_tip">请调大手机音量</string>
+    <string name="add_device_adjust_phone_volume">请调大手机音量\n并将手机喇叭对准设备麦克风</string>
+    <string name="add_device_adjust_phone_volume_to_hear_bugu">请调大手机音量，并将手机喇叭对准设备麦克风\n确认听到“布谷，布谷”声</string>
+    <string name="add_device_adjust_phone_volume_to_hear_jiji">请调大手机音量，并将手机喇叭对准设备麦克风\n确认听到“唧唧唧”声</string>
+    <string name="add_device_adjust_phone_volume_to_hear_volume">请调大手机音量，并将手机喇叭对准设备麦克风\n确认听到声波</string>
+    <string name="add_device_ap_install_battery">请将配件装上电池或连接电源适配器，如有插片，请将插片拔掉.</string>
+    <string name="add_device_bind_success_quit_tip">未设置时区可能导致云存储等服务出现异常</string>
+    <string name="add_device_binding_to_account">正在绑定设备到帐户，请稍候...</string>
+    <string name="add_device_blue_light_always">蓝灯常亮</string>
+    <string name="add_device_box_is_offline" translatable="false">乐盒不在线，请检测是否联网</string>
+    <string name="add_device_choose_ap">软AP添加</string>
+    <string name="add_device_choose_lan">有线添加</string>
+    <string name="add_device_choose_related_gateway">请选择需要关联的网关:</string>
+    <string name="add_device_choose_type_error">无该型号设备，请根据页面提示确定型号</string>
+    <string name="add_device_choose_type_tip1">设备型号通常标注在设备标签上 \n\n</string>
+    <string name="add_device_choose_type_tip2">乐橙设备建议通过输入设备型号进行配网；</string>
+    <string name="add_device_choose_type_tip3">乐橙设备型号通常以“TP、TF、TC、TD”开头。\n 如：TP2、TP7、TF1T \n\n</string>
+    <string name="add_device_choose_type_tip4">大华设备建议选择其他型号进行配网；</string>
+    <string name="add_device_choose_type_tip5">大华设备型号通常以“IPC、DH”开头。\n 如：IPC-HFW1225M-1、DH-NVR1104HS \n\n</string>
+    <string name="add_device_choose_type_tip6">标签示意图如下：</string>
+    <string name="add_device_choose_wifi">选取WiFi网络:</string>
+    <string name="add_device_choose_wlan">无线添加</string>
+    <string name="add_device_commom_dev_ip_error_tip">您的设备注册到平台已超过3天，要求设备与客户端在同一局域网才能绑定请断电重启设备</string>
+    <string name="add_device_commom_dev_more_than_ten_tip">非常抱歉，您已经尝试了10次了，休息30分钟后再来试试吧</string>
+    <string name="add_device_commom_dev_more_than_ten_twice_tip">非常抱歉，您已经尝试了20次了，休息一下，明天再来试试吧</string>
+    <string name="add_device_commom_dev_sn_code_conflict_tip">您的设备序列号冲突</string>
+    <string name="add_device_complete_related_operations">已完成相关操作</string>
+    <string name="add_device_con_wifi">请将手机连接WiFi</string>
+    <string name="add_device_config_failed">配置失败</string>
+    <string name="add_device_confirm_same_network">已确认连上同一网络</string>
+    <string name="add_device_confirm_to_connect_correct_wifi">请确认手机已连上设备所要连接的WiFi</string>
+    <string name="add_device_confrim_to_quit">确定退出？</string>
+    <string name="add_device_congratulations">恭喜你</string>
+    <string name="add_device_connect_and_goto_next">连接后将自动下一步</string>
+    <string name="add_device_connect_cloud_please_wait">正在连接云平台，请稍候...</string>
+    <string name="add_device_connect_error_and_quit_retry">连接异常,请退出重试</string>
+    <string name="add_device_connect_finish_to_next">Connected with device\'s hotspot, tap here to next step.</string>
+    <string name="add_device_connect_router_please_wait">正在连接路由器，请稍候...</string>
+    <string name="add_device_connect_timeout">连接超时</string>
+    <string name="add_device_connect_wifi_failed">自动连接失败</string>
+    <string name="add_device_continue_to_wait">继续等待</string>
+    <string name="add_device_current_accessory_sn">当前配件序列号(S/N)：</string>
+    <string name="add_device_days_remaining">%s天云存储</string>
+    <string name="add_device_define_device_password_tip">设备密码是乐橙创新的安全加固策略，旨在更好地保障您设备的信息安全。只有使用正确的设备密码，才能够获取设备的音视频信息。\n当您将摄像机接入NVR等设备时，需要您手动输入该密码，请您妥善保管；如您遗忘密码，可将设备恢复默认配置后再添加至帐号，以设置新的设备密码</string>
+    <string name="add_device_detect_safe_network_config_failed">无法检测网络安全配置\n请确认手机和设备连接到同一网络</string>
+    <string name="add_device_detecting_network_safety">正在检测网络安全配置，请稍候...</string>
+    <string name="add_device_device_bind_by_other">抱歉，您的设备已被%s绑定</string>
+    <string name="add_device_device_bind_by_yourself">该设备已在您的账号下</string>
+    <string name="add_device_device_not_support_5g">该设备不支持5GWiFi</string>
+    <string name="add_device_device_sn_or_imei_not_match">输入信息有误，请检查后重新输入</string>
+    <string name="add_device_disconnect_power_and_restart">请将设备断电并重新连接电源后点击“重新开始”</string>
+    <string name="add_device_enable_motion_detect">开启设备的动检、抓图、录像功能</string>
+    <string name="add_device_falshlight_off">轻触照亮</string>
+    <string name="add_device_falshlight_on">轻触关闭</string>
+    <string name="add_device_free_cloud_activated">去激活</string>
+    <string name="add_device_free_cloud_usage">点击去激活按钮后找到右上角“试用套餐”即可免费体验</string>
+    <string name="add_device_get_free_cloud_package">获得免费%1$s天云存储%2$s个月套餐</string>
+    <string name="add_device_get_permanent_free_cloud_package">获得%1$s天云存储永久免费套餐</string>
+    <string name="add_device_goto_connect_wifi">点击去选择WiFi网络</string>
+    <string name="add_device_goto_open_location_service">请打开手机“定位服务”来允许“乐橙”获取当前的WiFi信息</string>
+    <string name="add_device_green_light_always">绿灯长亮</string>
+    <string name="add_device_green_light_twinkle">绿灯闪烁</string>
+    <string name="add_device_higher_phone_volume">Higher phone volume and a closer distance between your phone and device will be more helpful.</string>
+    <string name="add_device_i_need_help">帮助</string>
+    <string name="add_device_input_corrent_sc_tip">请输入正确的安全验证码</string>
+    <string name="add_device_input_device_password">请输入设备密码</string>
+    <string name="add_device_input_imei">请输入设备IMEI号</string>
+    <string name="add_device_input_imei_by_user_tip">*IMEI号为15-17位数字</string>
+    <string name="add_device_input_imei_under_device">请输入设备机身标签上的IMEI号</string>
+    <string name="add_device_input_sccode">请输入8位设备安全码</string>
+    <string name="add_device_input_sec_code_by_user">请输入安全码</string>
+    <string name="add_device_input_sec_code_tip">请输入设备的6位安全码</string>
+    <string name="add_device_input_sn">请输入设备序列号</string>
+    <string name="add_device_input_sn_by_user_not_support_box" translatable="false">*乐盒及配件不支持手动输入序列号添加</string>
+    <string name="add_device_input_sn_under_device">请输入设备机身标签上的序列号和安全码</string>
+    <string name="add_device_input_wifi_name">请输入网络名称</string>
+    <string name="add_device_input_wifi_password">请输入WiFi密码</string>
+    <string name="add_device_keep_ap_close_to_gateway">将配件尽可能靠近网关设备</string>
+    <string name="add_device_keep_phone_close_to_device">将手机尽可能靠近设备</string>
+    <string name="add_device_kindly_reminder">温馨提示</string>
+    <string name="add_device_listen_wifi_pwd_error_tip">听到设备提示WIFI密码错误？</string>
+    <string name="add_device_name_for_device">请给设备取个名字吧!</string>
+    <string name="add_device_nb_tip1">请先按设备的自检/消音按钮</string>
+    <string name="add_device_nb_tip2">如果删除设备后重新添加需要断电重连</string>
+    <string name="add_device_next_step_count_down">下一步(%ds)</string>
+    <string name="add_device_no_gateway">暂无可关联的网关</string>
+    <string name="add_device_not_complete_tip">您还未完成配置，如果退出，你将可能重新开始配置流程</string>
+    <string name="add_device_not_support_to_bind">抱歉，暂不支持添加该型号设备</string>
+    <string name="add_device_not_tip_again" translatable="false">下次不再提示</string>
+    <string name="add_device_operation_by_instructions">请按照设备使用说明书进行操作</string>
+    <string name="add_device_operation_by_voice_or_light">请按照设备指示灯或语音提示进行选择操作</string>
+    <string name="add_device_operation_by_voice_tip">请按照设备指示灯或语音提示操作</string>
+    <string name="add_device_pairing_please_wait">配对中,请耐心等待...</string>
+    <string name="add_device_password_error_and_will_lock">密码错误，连续错误5次后设备将被锁定</string>
+    <string name="add_device_password_initial_tip">1.如您曾在乐橙客户端或其他客户端设置过设备密码，并遗忘密码，可将设备恢复默认配置后再重新添加设备，以设置新的设备密码。
+        \n2.如您未曾设置过设备密码，且您的设备标签上带有”安全码“字样，请输入设备标签上的8位安全码即可。</string>
+    <string name="add_device_phone_will_emit_signal">The phone will emit an audible signal.</string>
+    <string name="add_device_plug_cable_to_device">请将设备插入网线</string>
+    <string name="add_device_plug_power">请将设备接通电源</string>
+    <string name="add_device_qrcode_error_tip">二维码信息不完整，请尝试手动添加设备</string>
+    <string name="add_device_qrcode_msg_tip">距离保持在10-30cm,前后缓慢移动\n听到“二维码扫描成功”的语音提示后点击下一步</string>
+    <string name="add_device_qrcode_title_tip">请将二维码正对摄像头镜头</string>
+    <string name="add_device_quit_add_process">退出添加</string>
+    <string name="add_device_red_light_always">红灯长亮</string>
+    <string name="add_device_red_light_rotate">红灯旋转</string>
+    <string name="add_device_red_light_twinkle">红灯闪烁</string>
+    <string name="add_device_remember_password">记住密码</string>
+    <string name="add_device_restart">重新开始</string>
+    <string name="add_device_same_network_tip">请将手机和设备连接到同一网络</string>
+    <string name="add_device_scan_device_qr_code">请扫描设备机身上的二维码</string>
+    <string name="add_device_scan_lechange_device_qr_code">请扫描乐橙设备二维码</string>
+    <string name="add_device_service_time">剩余天数  %s天</string>
+    <string name="add_device_service_time_permanent_free">剩余天数  永久</string>
+    <string name="add_device_set_device_password_for_safety">为加强安全防护，请设置您的设备密码</string>
+    <string name="add_device_softap_dev_connect_check_tip">青色灯常亮</string>
+    <string name="add_device_softap_dev_connect_tip">您的铃铛设备正在连接Wi-Fi，如果连接成功，设备指示灯青色灯闪烁停止，变成青色灯常亮</string>
+    <string name="add_device_success_cloud_services_type">套餐类型</string>
+    <string name="add_device_switch_to_soft_ap_add">切换至软ap添加</string>
+    <string name="add_device_switch_to_wired_add">切换至有线添加</string>
+    <string name="add_device_switch_to_wireless_add">切换至无线添加</string>
+    <string name="add_device_time">时间</string>
+    <string name="add_device_time_filter_tip">Tap here to check how to enable device\'s hotspot.</string>
+    <string name="add_device_timeout_add_by_qrcode">二维码添加</string>
+    <string name="add_device_timeout_init_failed">检测网络安全配置失败</string>
+    <string name="add_device_timeout_light_tip9">绿/蓝灯长亮</string>
+    <string name="add_device_timeout_network_failed">接入网络失败</string>
+    <string name="add_device_timeout_router_failed">连接路由器失败</string>
+    <string name="add_device_timeout_title_tip7">请再试一次，或选择其他方式添加设备</string>
+    <string name="add_device_timeout_title_tip8">用顶针长按设备背部reset孔直至设备正面指示灯熄灭后点击“重新开始”</string>
+    <string name="add_device_tip_about_wifi_pwd">设备的热点密码为设备安全码，找到设备标签上带有”SC码“的字样，输入设备标签上的8位SC码即可。</string>
+    <string name="add_device_tip_connect_fail">如您自动连接失败，请尝试打开wifi列表，不保存密码，尝试重新输入密码</string>
+    <string name="add_device_tip_not_support_5g_1">1.您的摄像机暂不支持5G Hz频段Wi-Fi,如您使用的是双频路由器，请让手机和摄像机连接到2.4G Hz频段Wi-Fi的信号下。</string>
+    <string name="add_device_tip_not_support_5g_2">2.如您不确定手机和摄像机当前所连接的Wi-Fi频段,您可查看路由器相关说明书，进入路由器设置页面进行确认。</string>
+    <string name="add_device_tip_wifi_name">如您的wifi名称中有表情等特殊符号，例如：\uD83C\uDF39❤\uD83D\uDE0A\uD83D\uDCA6，可能会导致您的设备无法正常连接，建议删除WiFi名称内的特殊符号。</string>
+    <string name="add_device_title">设备添加</string>
+    <string name="add_device_turn_up_volume_notice">请调大手机音量 并将手机喇叭对准设备麦克风</string>
+    <string name="add_device_verify_device_pwd_failed">验证失败，请重新输入设备密码</string>
+    <string name="add_device_wait_to_connect_wifi">请等待系统自动连接</string>
+    <string name="add_device_wait_to_connect_wifi_failed">请进入手机的WiFi设置，连接上名为"%s"的热点，然后返回此页面</string>
+    <string name="add_device_wait_to_connect_wifi_failed_sc">请进入手机的WiFi设置，连接上名为"%s"的热点，然后返回此页面</string>
+    <string name="add_device_wait_to_connect_wifi_sc">安全验证码</string>
+    <string name="add_device_wait_to_connect_wifi_sc_pwd">热点密码为</string>
+    <string name="add_device_wifi_config_success">配置成功</string>
+    <string name="add_device_wifi_ssid">WiFi网络:</string>
+    <string name="add_device_will_hear_bugu">即将听到“布谷，布谷”声</string>
+    <string name="add_device_will_hear_jiji">即将听到“唧唧唧”声</string>
+    <string name="add_device_will_hear_volume">即将听到声波</string>
+    <string name="add_device_without_input_sccode_tip">*如标签上无安全验证码，则无需输入</string>
+    <string name="add_device_yellow_light_twinkle">重新开始</string>
+    <string name="application_name">Imou</string>
+    <string name="assetfont_html" translatable="false">file:///android_asset/htmls/1.htm</string>
+    <string name="client_type">phone</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_complete">完成</string>
+    <string name="common_confirm">确定</string>
+    <string name="common_connect_failed">连接失败</string>
+    <string name="common_copy_success">复制成功</string>
+    <string name="common_local_photo">相册</string>
+    <string name="common_next">下一步</string>
+    <string name="common_no_authority">无权限</string>
+    <string name="common_offline">离线</string>
+    <string name="common_today">今天  </string>
+    <string name="common_yesterday">昨天  </string>
+    <string name="device_add_scan_error">未检测到二维码信息</string>
+    <string name="device_disturb_state_failed">设置失败</string>
+    <string name="device_manager_connect">连接</string>
+    <string name="device_manager_connected_wifi">当前WiFi网络:</string>
+    <string name="device_manager_exit">退出</string>
+    <string name="device_manager_input_captcha">请输入验证码</string>
+    <string name="device_manager_input_device_name">请输入设备名称</string>
+    <string name="device_manager_input_wifi_password">请输入WIFI密码</string>
+    <string name="device_manager_not_saved_tip">设置尚未保存，是否退出</string>
+    <string name="device_manager_password_error">密码错误</string>
+    <string name="device_manager_regain">重新获取</string>
+    <string name="device_manager_report_month_select_month"><ns1:g id="num">%d</ns1:g>月</string>
+    <string name="device_manager_report_month_select_year"><ns1:g id="num">%d</ns1:g>年</string>
+    <string name="device_manager_summer_time">夏令时</string>
+    <string name="device_manager_summer_time_rule">夏令时设置必须大于1小时</string>
+    <string name="device_manager_wifi_connetting_tip">WIFI连接中，请稍后刷新查看</string>
+    <string name="device_manager_wifi_disable">设备WiFi已关闭</string>
+    <string name="device_manager_wifi_list_empty">暂无WiFi</string>
+    <string name="device_manager_wifi_name">名称：</string>
+    <string name="device_manager_wifi_psw">密码：</string>
+    <string name="device_manager_wifi_title">网络配置</string>
+    <string name="device_tip_content">请输入设备型号</string>
+    <string name="device_type_choose">选择设备类型</string>
+    <string name="device_type_choose_tip">如何查看设备类型</string>
+    <string name="device_type_input_hint">请输入设备型号</string>
+    <string name="device_type_other">其他</string>
+    <string name="device_type_sure">确定</string>
+    <string name="geofence_backgroud_location_permission_explain">To enable Geofencing, please go to Settings > Imou on your phone. Then change the location setting to "Always".</string>
+    <string name="go_to_setting">去设置</string>
+    <string name="host">www.lechange.cn:443</string>
+    <string name="mobile_common_bec_add_device_valid_error">安全码错误</string>
+    <string name="mobile_common_bec_common_network_exception">网络不给力</string>
+    <string name="mobile_common_bec_common_timeout">网络不给力，请检查网络！</string>
+    <string name="mobile_common_bec_device_locked">抱歉，设备密码尝试过多，您的设备已被锁定，请断电重启设备</string>
+    <string name="mobile_common_common_ignore">忽略</string>
+    <string name="mobile_common_common_never_remind">下次不再提醒</string>
+    <string name="mobile_common_device">设备</string>
+    <string name="mobile_common_device_pwd_rule">8-32位数字、字母、符号组合（区分大小写）</string>
+    <string name="mobile_common_device_timezone">设备时区</string>
+    <string name="mobile_common_get_info_failed">获取失败</string>
+    <string name="mobile_common_how_modify_device_pwd">如何修改设备密码。</string>
+    <string name="mobile_common_lack_permission_then_exit">缺少必要的权限，请打开权限</string>
+    <string name="mobile_common_later">稍后再说</string>
+    <string name="mobile_common_modify_device_pwd">修改设备密码</string>
+    <string name="mobile_common_modify_device_pwd_tip">为了保护您设备的网络安全，建议添加完成后修改默认设备密码。</string>
+    <string name="mobile_common_network_config">网络配置</string>
+    <string name="mobile_common_no_google_play_detection">跳转失败，请先安装谷歌应用市场</string>
+    <string name="mobile_common_no_huawei_play_detection">请先安装华为应用市场.</string>
+    <string name="mobile_common_password_too_simple">密码过于简单</string>
+    <string name="mobile_common_permission_apply">权限申请</string>
+    <string name="mobile_common_permission_explain_access_location_usage">请开启定位信息权限，以正常使用基于地理位置的服务及WiFi连接等功能。</string>
+    <string name="mobile_common_permission_explain_camera">请开启相机访问权限，以正常使用拍照，扫描二维码等功能</string>
+    <string name="mobile_common_permission_explain_external_storage">请开启存储权限，以正常使用抓图、录制、下载等功能</string>
+    <string name="mobile_common_permission_explain_get_accounts">请开启联系人访问权限，以正常使用添加通讯录好友的功能</string>
+    <string name="mobile_common_permission_explain_read_phone_state">请开启电话访问权限，以拨打客服热线</string>
+    <string name="mobile_common_permission_explain_record_audio">请开启麦克风访问权限，以正常使用对讲、自定义语音录制等功能</string>
+    <string name="mobile_common_permission_explain_write_accounts">请开启联系人写入权限，以保存“乐橙电话报警”为联系人</string>
+    <string name="mobile_common_retry">再试一次</string>
+    <string name="mobile_common_tap_to_view">点击查看</string>
+    <string name="more_settings">更多设置</string>
+    <string name="phone_not_match_tip">格式不正确</string>
+    <string name="user_input_name">请输入手机号码或邮箱</string>
+    <string name="user_login_title">登录</string>
+    <string name="user_pwd_login_login">账户登陆</string>
+    <string name="user_register">注册</string>
+    <string name="user_register_btn">账户注册</string>
+    <string name="valid_code_retrieve_valid_num">重新获取(<ns1:g id="num">%d</ns1:g>)</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light"/>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+    <style name="TextAppearance.17sp_lc_black_color" parent="@android:style/TextAppearance">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/c2</item>
+    </style>
+    <style name="add_Device_timeout_btn_style" parent="add_device_btn_style">
+        <item name="android:drawablePadding">-35dp</item>
+        <item name="android:paddingLeft">25dp</item>
+
+
+    </style>
+    <style name="add_device_btn_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/mobile_common_next_btn_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/c43</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+    <style name="add_device_common_16dp_2c2c2c">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/c2</item>
+    </style>
+    <style name="add_device_help_style">
+        <item name="android:drawableRight">@drawable/adddevice_icon_help</item>
+        <item name="android:drawablePadding">1dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="checks_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowAnimationStyle">@android:anim/fade_in</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="common_horizontal_line_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/c8</item>
+    </style>
+    <style name="common_input_style">
+        <item name="android:textSize">@dimen/t3</item>
+        <item name="android:textColor">@color/c40</item>
+        <item name="android:textColorHint">@color/c42</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">middle</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="dahua.wight.progressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/progress_style</item>
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDuration">3500</item>
+        <item name="android:minWidth">30dip</item>
+        <item name="android:maxWidth">30dip</item>
+        <item name="android:minHeight">30dip</item>
+        <item name="android:maxHeight">30dip</item>
+    </style>
+    <style name="dev_detail_relativeLayout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">@drawable/mobile_common_my_menu_selector_bg</item>
+    </style>
+    <style name="lc_bottom_button_style">
+        <item name="android:textSize">@dimen/t3</item>
+        <item name="android:textColor">@color/c43</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">middle</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/lc_standard_big_btn_selector</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+    <style name="mobile_common_TextAppearance.22sp_black_bold" parent="@android:style/TextAppearance">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/c2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="mobile_common_cam_text_edit">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/c5</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">middle</item>
+        <item name="android:gravity">right|center_vertical</item>
+    </style>
+    <style name="mobile_common_cam_text_edit.enabled">
+        <item name="android:textColor">@color/mobile_common_text_edit_enable_selector</item>
+    </style>
+    <style name="mobile_common_cam_text_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">middle</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:textSize">@dimen/mobile_common_sp_17</item>
+        <item name="android:textColor">@color/c2</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="mobile_common_cam_text_name.enabled">
+        <item name="android:textColor">@color/mobile_common_text_name_enable_selector</item>
+    </style>
+    <style name="mobile_common_cam_text_sub">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:drawablePadding">0dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/c5</item>
+    </style>
+    <style name="mobile_common_checks_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/mobile_common_transparent</item>
+        <item name="android:windowAnimationStyle">@style/mobile_common_dialog_anima</item>
+    </style>
+    <style name="mobile_common_common_title">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/mobile_common_common_title_height</item>
+        <item name="android:background">@color/c43</item>
+    </style>
+    <style name="mobile_common_custom_dialog" parent="@android:style/Theme.DeviceDefault.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="mobile_common_dahua.wight.progressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateDrawable">@drawable/mobile_common_progress_style</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDuration">3500</item>
+        <item name="android:minWidth">30dip</item>
+        <item name="android:maxWidth">30dip</item>
+        <item name="android:minHeight">30dip</item>
+        <item name="android:maxHeight">30dip</item>
+    </style>
+    <style name="mobile_common_dahua.wight.progressBar.Small" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:indeterminateDrawable">@drawable/mobile_common_progress_style</item>
+    </style>
+    <style name="mobile_common_dialog_anima" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/mobile_common_dialog_appear</item>
+        <item name="android:windowExitAnimation">@anim/mobile_common_dialog_disappear</item>
+    </style>
+    <style name="sign_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog的windowFrame框为无 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否漂现在activity上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 去除黑色边框的关键设置项 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 屏幕背景是否变暗 -->
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+    <style name="translucent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/c51</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+</resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ecare.yjylaio">
+
+    <!--网络访问权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--读写存储-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--Bugly所需权限-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application
+        android:name=".config.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup,android:label,android:supportsRtl">
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="main"
+                    android:scheme="android" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.CheatedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.EntertainmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.EntertainmentListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.WebPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.DoctorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".lechange.ui.EnvGuideActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".lechange.ui.DeviceListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".lechange.ui.DeviceDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".lechange.ui.DeviceOnlineMediaPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".lechange.ui.DeviceRecordListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".lechange.ui.DeviceRecordPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!--Bugly-->
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent" />
+        <provider
+            android:name=".utils.BuglyFileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="name,authorities,exported,grantUriPermissions">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths_bugly"
+                tools:replace="name,resource" />
+        </provider>
+    </application>
+</manifest>

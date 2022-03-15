@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorF0F0F0"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_title" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_cheated"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42"
+        app:tabIndicatorColor="@color/colorBlack"
+        app:tabIndicatorHeight="@dimen/dp_2"
+        app:tabSelectedTextColor="@color/color333333"
+        app:tabTextColor="@color/color999999" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_cheated"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_police"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/gradient_ffd0d1_d60e11_e70000"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp_23"
+                android:layout_height="@dimen/dp_23"
+                android:src="@drawable/icon_cheated_police" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_3"
+                android:text="我的警察"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_19"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_lawyer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/gradient_92f970_39c10b_33c701"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp_23"
+                android:layout_height="@dimen/dp_23"
+                android:src="@drawable/icon_cheated_lawyer" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_3"
+                android:text="我的律师"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_19"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
