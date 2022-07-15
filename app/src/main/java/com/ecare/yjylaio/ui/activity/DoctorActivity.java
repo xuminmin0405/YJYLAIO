@@ -104,7 +104,7 @@ public class DoctorActivity extends RootActivity<DoctorContract.Presenter> imple
     public void initViews(@Nullable Bundle savedInstanceState) {
         super.initViews(savedInstanceState);
         //设置标题
-        tvTitle.setText("健康兰里");
+        tvTitle.setText("健康指标");
         //初始化SmartRefreshLayout
         initSmartRefreshLayout();
         //设置姓名

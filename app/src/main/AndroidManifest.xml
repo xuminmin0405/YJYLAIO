@@ -15,6 +15,20 @@
     <uses-permission android:name="android.permission.READ_LOGS" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!--android 9.0上使用前台服务，需要添加权限-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
         android:name=".config.App"
         android:allowBackup="true"
@@ -69,6 +83,31 @@
             android:name=".ui.activity.DoctorActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ui.activity.OldAgeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.MonitorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SelfAssessmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.HelpLabelDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.HelpDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SelfAssessmentNewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.VideoPlayerActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".lechange.ui.EnvGuideActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|locale"
             android:exported="false"
@@ -120,5 +159,9 @@
                 android:resource="@xml/provider_paths_bugly"
                 tools:replace="name,resource" />
         </provider>
+        <activity
+            android:name=".rtc.activity.AliRtcChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

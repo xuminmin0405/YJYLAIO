@@ -4,212 +4,273 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color010100">
+    android:background="@color/color010303"
+    android:padding="@dimen/dp_10">
 
     <ImageView
         android:id="@+id/iv_bg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:src="@drawable/bg_home"
+        android:src="@drawable/icon_home_bg"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="西溪街道居家养老服务中心"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_18"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/iv_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_bg" />
+
+    <TextView
+        android:id="@+id/tv_passenger_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:drawableLeft="@drawable/icon_home_one"
+        android:drawablePadding="8dp"
+        android:text="今日客流：0"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_14"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bg"
+        app:layout_constraintLeft_toLeftOf="@id/iv_bg" />
+
+    <TextClock
+        android:id="@+id/tc_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:format12Hour="MM月dd日 14°C"
+        android:format24Hour="MM月dd日 14°C"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_14"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bg"
+        app:layout_constraintRight_toRightOf="@id/iv_bg"
+        tools:text="08:35" />
 
     <TextClock
         android:id="@+id/tc_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_5"
         android:format12Hour="HH:mm"
         android:format24Hour="HH:mm"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/font_58"
+        android:textSize="@dimen/font_28"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/iv_bg"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tc_data"
+        app:layout_constraintRight_toRightOf="@id/tc_data"
         tools:text="08:35" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_10"
-        android:layout_marginEnd="@dimen/dp_10"
-        android:layout_marginBottom="@dimen/dp_14"
-        android:drawableLeft="@drawable/icon_home_location"
-        android:drawablePadding="5dp"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:text="三墩镇"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/font_25"
-        android:textStyle="bold"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintBottom_toBottomOf="@id/iv_bg"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@id/tc_time"
-        app:layout_constraintRight_toRightOf="parent" />
-
     <LinearLayout
-        android:id="@+id/ll_doctor"
+        android:id="@+id/ll_smart_meal"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/dp_5"
-        android:layout_marginTop="@dimen/dp_5"
-        android:background="@drawable/gradient_40a4ec_026ec7_corners_5"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/gradient_ae5ffd_724bda_corners_5"
         android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/ll_service"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/ll_remote_consultation"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/ll_service"
-        app:layout_constraintTop_toBottomOf="@id/iv_bg">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_bg"
+        app:layout_constraintVertical_weight="104">
 
         <ImageView
             android:layout_width="@dimen/dp_48"
             android:layout_height="@dimen/dp_48"
-            android:src="@drawable/icon_home_doctor" />
+            android:src="@drawable/icon_home_two" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_5"
-            android:text="问医生"
+            android:layout_marginStart="@dimen/dp_9"
+            android:text="智慧助餐"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/font_23"
+            android:textSize="@dimen/font_22"
             android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_service"
+        android:id="@+id/ll_remote_consultation"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
         android:background="@drawable/gradient_fbae7a_fd5f01_corners_5"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/ll_doctor"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_doctor">
+        app:layout_constraintBottom_toTopOf="@id/ll_old_age"
+        app:layout_constraintHorizontal_weight="140"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ll_health_indicators"
+        app:layout_constraintTop_toBottomOf="@id/ll_smart_meal"
+        app:layout_constraintVertical_weight="182">
 
         <ImageView
-            android:layout_width="@dimen/dp_48"
-            android:layout_height="@dimen/dp_48"
-            android:src="@drawable/icon_home_service" />
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/icon_home_three" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_11"
+            android:text="远程问诊"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_16"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_health_indicators"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_40a4ec_026ec7_corners_5"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/ll_self_assessment"
+        app:layout_constraintHorizontal_weight="192"
+        app:layout_constraintLeft_toRightOf="@id/ll_remote_consultation"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ll_remote_consultation">
+
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/icon_home_four" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_5"
-            android:text="要服务"
+            android:text="健康指标"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/font_23"
+            android:textSize="@dimen/font_16"
             android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_cheated"
+        android:id="@+id/ll_self_assessment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="@drawable/gradient_19d3c9_0fa8a0_corners_5"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/ll_remote_consultation"
+        app:layout_constraintLeft_toLeftOf="@id/ll_health_indicators"
+        app:layout_constraintRight_toLeftOf="@+id/ll_chinese_Medicine"
+        app:layout_constraintTop_toBottomOf="@id/ll_health_indicators">
+
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/icon_home_five" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="能力自评"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_16"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_chinese_Medicine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_03ded6_0bbded_corners_5"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/ll_self_assessment"
+        app:layout_constraintLeft_toRightOf="@id/ll_self_assessment"
+        app:layout_constraintRight_toRightOf="@+id/ll_health_indicators"
+        app:layout_constraintTop_toTopOf="@id/ll_self_assessment">
+
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/icon_home_six" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="中医诊疗"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_16"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_old_age"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="@drawable/gradient_40a4ec_026ec7_corners_5"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="140"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ll_have_fun"
+        app:layout_constraintTop_toBottomOf="@id/ll_remote_consultation"
+        app:layout_constraintVertical_weight="105">
+
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/icon_home_seven" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="老有所为"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_16"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_have_fun"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/gradient_fa8080_f23305_corners_5"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/ll_help"
-        app:layout_constraintLeft_toLeftOf="@id/ll_service"
-        app:layout_constraintRight_toRightOf="@id/ll_service"
-        app:layout_constraintTop_toTopOf="@id/ll_doctor">
+        app:layout_constraintBottom_toBottomOf="@id/ll_old_age"
+        app:layout_constraintHorizontal_weight="192"
+        app:layout_constraintLeft_toRightOf="@id/ll_old_age"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ll_old_age">
 
         <ImageView
-            android:layout_width="@dimen/dp_48"
-            android:layout_height="@dimen/dp_48"
-            android:src="@drawable/icon_home_cheated" />
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@drawable/icon_home_eight" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="不上当"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="老有所乐"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/font_23"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_help"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp_5"
-        android:background="@drawable/gradient_859feb_5470c4_corners_5"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/ll_doctor"
-        app:layout_constraintLeft_toLeftOf="@id/ll_service"
-        app:layout_constraintRight_toRightOf="@id/ll_service"
-        app:layout_constraintTop_toBottomOf="@id/ll_cheated">
-
-        <ImageView
-            android:layout_width="@dimen/dp_48"
-            android:layout_height="@dimen/dp_48"
-            android:src="@drawable/icon_home_help" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="我帮人"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/font_23"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_entertainment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/gradient_ae5ffd_724bda_corners_5"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/ll_physical_examination"
-        app:layout_constraintLeft_toLeftOf="@id/ll_doctor"
-        app:layout_constraintRight_toRightOf="@id/ll_doctor"
-        app:layout_constraintTop_toTopOf="@id/ll_service">
-
-        <ImageView
-            android:layout_width="@dimen/dp_48"
-            android:layout_height="@dimen/dp_48"
-            android:src="@drawable/icon_home_entertainment" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="文化娱乐"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/font_23"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_physical_examination"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp_5"
-        android:background="@drawable/gradient_19d3c9_0fa8a0_corners_5"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/ll_service"
-        app:layout_constraintLeft_toLeftOf="@id/ll_doctor"
-        app:layout_constraintRight_toRightOf="@id/ll_doctor"
-        app:layout_constraintTop_toBottomOf="@id/ll_entertainment">
-
-        <ImageView
-            android:layout_width="@dimen/dp_48"
-            android:layout_height="@dimen/dp_48"
-            android:src="@drawable/icon_home_physical_examination" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="体检预约"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/font_23"
+            android:textSize="@dimen/font_16"
             android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

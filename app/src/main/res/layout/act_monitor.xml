@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#12183E"
+    android:padding="@dimen/dp_10">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/icon_monitor_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_passenger_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:text="0"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_28"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_number_hint"
+        app:layout_constraintLeft_toLeftOf="@id/tv_number_hint"
+        app:layout_constraintRight_toRightOf="@id/tv_number_hint" />
+
+    <TextView
+        android:id="@+id/tv_number_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_22"
+        android:layout_marginBottom="@dimen/dp_22"
+        android:text="今日入场人数"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_14"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bg"
+        app:layout_constraintLeft_toLeftOf="@id/iv_bg" />
+
+    <TextClock
+        android:id="@+id/tc_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:format12Hour="MM月dd日 14°C"
+        android:format24Hour="MM月dd日 14°C"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_14"
+        app:layout_constraintRight_toRightOf="@id/iv_bg"
+        app:layout_constraintTop_toTopOf="@id/tv_number_hint"
+        tools:text="08:35" />
+
+    <TextClock
+        android:id="@+id/tc_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_7"
+        android:format12Hour="HH:mm"
+        android:format24Hour="HH:mm"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_28"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tc_data"
+        app:layout_constraintRight_toRightOf="@id/tc_data"
+        tools:text="08:35" />
+
+    <LinearLayout
+        android:id="@+id/ll_one"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_110"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="@drawable/corners_5_solid_222d64"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ll_two"
+        app:layout_constraintTop_toBottomOf="@id/iv_bg">
+
+        <ImageView
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:src="@drawable/icon_monitor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:text="展厅"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_17" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_two"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_110"
+        android:background="@drawable/corners_5_solid_222d64"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@id/ll_one"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ll_one">
+
+        <ImageView
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:src="@drawable/icon_monitor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:text="走廊A"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_17" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_three"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_110"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="@drawable/corners_5_solid_222d64"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ll_four"
+        app:layout_constraintTop_toBottomOf="@id/ll_one">
+
+        <ImageView
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:src="@drawable/icon_monitor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:text="走廊B"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_17" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_four"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_110"
+        android:background="@drawable/corners_5_solid_222d64"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@id/ll_three"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ll_three">
+
+        <ImageView
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:src="@drawable/icon_monitor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:text="多功能厅"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_17" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_five"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_110"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/corners_5_solid_222d64"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="@id/ll_three"
+        app:layout_constraintRight_toRightOf="@id/ll_three"
+        app:layout_constraintTop_toBottomOf="@id/ll_three">
+
+        <ImageView
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:src="@drawable/icon_monitor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:text="活动室"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_17" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,18 +6,17 @@ import android.content.Intent;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.view.View;
+import android.widget.TextView;
 
-import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.ecare.yjylaio.R;
-import com.ecare.yjylaio.base.SimpleActivity;
+import com.ecare.yjylaio.base.BaseActivity;
 import com.ecare.yjylaio.config.Constants;
+import com.ecare.yjylaio.contract.MainContract;
+import com.ecare.yjylaio.presenter.MainPresenter;
+import com.ecare.yjylaio.rtc.activity.AliRtcChatActivity;
 import com.ecare.yjylaio.widght.SwipePromptPopupView;
 import com.lxj.xpopup.XPopup;
 import com.mwcard.Reader;
@@ -25,9 +24,17 @@ import com.mwcard.ReaderAndroidUsb;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import butterknife.BindView;
+import butterknife.OnClick;
+import io.reactivex.Flowable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * ProjectName: YJYLAIO
@@ -38,20 +45,30 @@ import butterknife.BindView;
  * CreateDate: 2021/6/17 17:39
  * Version: 1.0
  */
-public class MainActivity extends SimpleActivity {
+public class MainActivity extends BaseActivity<MainContract.Presenter> implements MainContract.View {
 
-    //WebView
-    @BindView(R.id.wv_web)
-    WebView mWebView;
     //USB读卡
     private UsbManager mUsbManager;
     private static final String DEVICE_USB = "com.android.example.USB";
     public static ReaderAndroidUsb mReaderAndroidUsb = null;
     public static Reader mReader = null;
 
+    @BindView(R.id.tv_passenger_flow)
+    TextView tvPassengerFlow;
+
+    //客流量
+    private int mEnteredTotal;
+    //客流量请求定时
+    private Disposable mSubscribe;
+
+    @Override
+    protected MainContract.Presenter createPresenter() {
+        return new MainPresenter();
+    }
+
     @Override
     protected int getLayoutId() {
-        return R.layout.act_main_new;
+        return R.layout.act_main;
     }
 
     @Override
@@ -61,68 +78,85 @@ public class MainActivity extends SimpleActivity {
 
     @Override
     protected void initViews(@Nullable Bundle savedInstanceState) {
-        //初始化WebView
-        initWebView();
+
     }
 
-    /**
-     * 初始化WebView
-     */
-    private void initWebView() {
-        //WebSettings
-        WebSettings webSettings = mWebView.getSettings();
-        //设置WebView是否允许执行JavaScript脚本，默认false，不允许
-        webSettings.setJavaScriptEnabled(true);
-        //设置自适应屏幕，两者合用
-        webSettings.setUseWideViewPort(true);      //将图片调整到适合WebView的大小
-        webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
-        //设置脚本是否允许自动打开弹窗，默认false，不允许
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-        //设置是否开启DOM存储API权限，默认false，未开启，设置为true，WebView能够使用DOM storage API
-        webSettings.setDomStorageEnabled(true);
-        //设置页面缓存模式
-        webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        //设置WebView底层的布局算法
-        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL);
-        //设置允许混合模式
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-        }
-        //设置JSBridge
-        //mWebView.addJavascriptInterface(new JSBridge(this), "yinqingli");
-        //处理各种通知 & 请求事件
-        mWebView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if (url.startsWith("http") || url.startsWith("https")) {
-                    return false;
-                } else {
-                    if (StringUtils.equals("yjylaio://main", url)) {
-                        connectDevice();
-                        new XPopup.Builder(mContext)
-                                .dismissOnBackPressed(false) // 按返回键是否关闭弹窗，默认为true
-                                .dismissOnTouchOutside(false) // 点击外部是否关闭弹窗，默认为true
-                                .asCustom(new SwipePromptPopupView(mContext))
-                                .show();
-                        return true;
-                    }
-                    try {
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                        startActivity(intent);
-                        return true;
-                    } catch (Exception e) {
-                        return false;
-                    }
+    @OnClick({R.id.iv_bg, R.id.ll_smart_meal, R.id.ll_remote_consultation, R.id.ll_health_indicators, R.id.ll_self_assessment, R.id.ll_chinese_Medicine, R.id.ll_old_age, R.id.ll_have_fun})
+    public void onViewClicked(View view) {
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.iv_bg:
+                intent = new Intent(mContext, MonitorActivity.class);
+                intent.putExtra(Constants.IT_NAME, mEnteredTotal);
+                startActivity(intent);
+                break;
+            case R.id.ll_smart_meal:
+                intent = new Intent(mContext, WebPageActivity.class);
+                intent.putExtra(Constants.IT_URL, Constants.URL_SMART_MEAL);
+                startActivity(intent);
+                //startActivity(new Intent(mContext, EntertainmentActivity.class));
+                break;
+            case R.id.ll_remote_consultation:
+                connectDevice();
+                new XPopup.Builder(mContext)
+                        .dismissOnBackPressed(false) // 按返回键是否关闭弹窗，默认为true
+                        .dismissOnTouchOutside(false) // 点击外部是否关闭弹窗，默认为true
+                        .asCustom(new SwipePromptPopupView(mContext, 1))
+                        .show();
+                //intent = new Intent(mContext, AliRtcChatActivity.class);
+                //intent.putExtra(Constants.IT_ID_CARD, "330121195812231127");
+                //intent.putExtra(Constants.IT_NAME, "来暖庆");
+                //startActivity(intent);
+                break;
+            case R.id.ll_health_indicators:
+                intent = new Intent(mContext, WebPageActivity.class);
+                intent.putExtra(Constants.IT_URL, Constants.URL_HEALTH_INDICATORS);
+                startActivity(intent);
+                break;
+            case R.id.ll_self_assessment:
+                connectDevice();
+                new XPopup.Builder(mContext)
+                        .dismissOnBackPressed(false) // 按返回键是否关闭弹窗，默认为true
+                        .dismissOnTouchOutside(false) // 点击外部是否关闭弹窗，默认为true
+                        .asCustom(new SwipePromptPopupView(mContext, 2))
+                        .show();
+//                intent = new Intent(mContext, SelfAssessmentNewActivity.class);
+//                intent.putExtra(Constants.IT_ID_CARD, "330121195812231127");
+//                startActivity(intent);
+                break;
+            case R.id.ll_chinese_Medicine:
+                try {
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.URL_CHINESE_MEDICINE));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    ToastUtils.showShort("手机还没有安装支持打开此网页的应用！");
                 }
-            }
-        });
+                break;
+            case R.id.ll_old_age:
+                startActivity(new Intent(mContext, OldAgeActivity.class));
+                //ToastUtils.showShort("敬请期待");
+                break;
+            case R.id.ll_have_fun:
+                startActivity(new Intent(mContext, HelpActivity.class));
+                //startActivity(new Intent(mContext, CheatedActivity.class));
+                break;
+            default:
+                break;
+        }
     }
-
 
     @Override
     protected void doBusiness() {
-        //加载网页
-        mWebView.loadUrl(Constants.URL_MAIN);
+        mSubscribe = Flowable.interval(0, 5, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(@NonNull Long aLong) throws Exception {
+                        mPresenter.getEnteredTotal();
+                    }
+                });
     }
 
     /**
@@ -176,30 +210,15 @@ public class MainActivity extends SimpleActivity {
         }
     }
 
-    /**
-     * 返回键处理
-     */
     @Override
-    public void onBackPressed() {
-        if (mWebView.canGoBack()) {
-            mWebView.goBack();
-        } else {
-            super.onBackPressed();
-        }
+    public void setEnteredTotal(Integer data) {
+        mEnteredTotal = data;
+        tvPassengerFlow.setText("今日客流：" + data);
     }
 
-    /**
-     * 避免WebView内存泄露
-     */
     @Override
-    public void onDestroy() {
-        if (mWebView != null) {
-            mWebView.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
-            mWebView.clearHistory();
-            ((ViewGroup) mWebView.getParent()).removeView(mWebView);
-            mWebView.destroy();
-            mWebView = null;
-        }
+    protected void onDestroy() {
         super.onDestroy();
+        mSubscribe.dispose();
     }
 }

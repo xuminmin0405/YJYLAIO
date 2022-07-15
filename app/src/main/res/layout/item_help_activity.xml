@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp_12"
+    android:layout_marginEnd="@dimen/dp_12"
+    android:background="@drawable/corners_10_solid_white"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_10">
+
+    <ImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_153"
+        android:scaleType="centerCrop"
+        tools:src="@color/color999999" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color333333"
+        android:textSize="@dimen/font_17"
+        android:textStyle="bold"
+        tools:text="弥勒寺文化公园志愿服务者招募弥勒寺文化公园志愿服务者招募" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_3"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color999999"
+        android:textSize="@dimen/font_13"
+        android:textStyle="bold"
+        tools:text="已报名：2349人已报名：2349人已报名：2349人已报名：2349人" />
+</LinearLayout>

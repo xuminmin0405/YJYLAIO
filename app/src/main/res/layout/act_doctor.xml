@@ -37,6 +37,7 @@
                     android:textColor="@color/color666666"
                     android:textSize="@dimen/font_19"
                     android:textStyle="bold"
+                    android:visibility="gone"
                     tools:text="欢迎陈大木进入健康兰里！" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +47,8 @@
                     android:paddingStart="@dimen/dp_12"
                     android:paddingTop="@dimen/dp_10"
                     android:paddingEnd="@dimen/dp_12"
-                    android:paddingBottom="@dimen/dp_10">
+                    android:paddingBottom="@dimen/dp_10"
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/iv_consulting"
@@ -166,7 +168,8 @@
                         android:paddingBottom="@dimen/dp_10"
                         android:text="详细数据 >"
                         android:textColor="@color/colorBlack"
-                        android:textSize="@dimen/font_12" />
+                        android:textSize="@dimen/font_12"
+                        android:visibility="invisible" />
                 </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout

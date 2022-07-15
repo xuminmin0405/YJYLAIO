@@ -89,4 +89,8 @@ dependencies {
     api project(':DeviceAddModule')
     //multidex
     implementation "androidx.multidex:multidex:2.0.1"
+    //AliRTC
+    implementation 'com.aliyun.rtc:AliRTC-Full:2.5.7.0.22011719573410'
+    //ijk
+    implementation 'com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.1.6-jitpack'
 }

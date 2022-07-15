@@ -14,13 +14,18 @@ public class Constants {
 
     //========== Api ==========
 
-    public static final String API_BASE_URL = BuildConfig.DEBUG ? "http://192.168.1.20:8201/kyyth-mobile/" : "https://xhky.hzxh.gov.cn/kyyth-mobile/";
+    public static final String API_BASE_URL = BuildConfig.DEBUG ? "https://xhky.hzxh.gov.cn/kyyth-mobile/" : "https://xhky.hzxh.gov.cn/kyyth-mobile/";
+    public static final String RTC_API_BASE_URL = BuildConfig.DEBUG ? "https://xhky.hzxh.gov.cn/zhy-cms/" : "https://xhky.hzxh.gov.cn/zhy-cms/";
+    public static final String TRANS_API_BASE_URL = BuildConfig.DEBUG ? "https://xhky.hzxh.gov.cn/ecare-trans-service/" : "https://xhky.hzxh.gov.cn/ecare-trans-service/";
     public static final int API_SUCCESS = 200;
 
     //========== Url ==========
 
     public static final String URL_MAIN = "https://sandun.tmp.kepai365.ltd/html/tablet/index.html#/main";
     public static final String URL_FITNESS_DETAIL = "https://xhky.hzxh.gov.cn/yjyl/#/fitnessDetail?paramsUserIdNo=";
+    public static final String URL_SMART_MEAL = "https://xhky.hzxh.gov.cn/wisecare_saas_meal/mealApp/#/";
+    public static final String URL_HEALTH_INDICATORS = "https://go.yjhealth.cn/fwlink/1647833802753";
+    public static final String URL_CHINESE_MEDICINE = "qiaolz://";
 
     //========== Key ==========
 
@@ -41,4 +46,5 @@ public class Constants {
     public static final String IT_URL = "url";
     public static final String IT_ID_CARD = "id_card";
     public static final String IT_NAME = "name";
+    public static final String IT_ID = "id";
 }

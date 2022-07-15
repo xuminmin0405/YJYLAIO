@@ -9,8 +9,11 @@ import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.ecare.yjylaio.R;
 import com.ecare.yjylaio.config.Constants;
+import com.ecare.yjylaio.rtc.activity.AliRtcChatActivity;
 import com.ecare.yjylaio.ui.activity.DoctorActivity;
 import com.ecare.yjylaio.ui.activity.MainActivity;
+import com.ecare.yjylaio.ui.activity.SelfAssessmentActivity;
+import com.ecare.yjylaio.ui.activity.SelfAssessmentNewActivity;
 import com.lxj.xpopup.core.CenterPopupView;
 
 import androidx.annotation.NonNull;
@@ -40,10 +43,13 @@ public class SwipePromptPopupView extends CenterPopupView {
     //读卡标记
     private boolean isRead = true;
     private boolean isIdCard = true;
+    //跳转类型
+    private int mType;
 
-    public SwipePromptPopupView(@NonNull Context context) {
+    public SwipePromptPopupView(@NonNull Context context, int type) {
         super(context);
         mContext = context;
+        mType = type;
     }
 
     @Override
@@ -83,9 +89,19 @@ public class SwipePromptPopupView extends CenterPopupView {
                         @Override
                         public void accept(String s) throws Exception {
                             String idCard = splitCardInfo(s);
-                            Intent intent = new Intent(mContext, DoctorActivity.class);
-                            intent.putExtra(Constants.IT_ID_CARD, idCard);
-                            intent.putExtra(Constants.IT_NAME, s.split("\\|")[isIdCard ? 0 : 2]);
+                            Intent intent = null;
+                            if (mType == 1) {
+                                intent = new Intent(mContext, AliRtcChatActivity.class);
+                                intent.putExtra(Constants.IT_ID_CARD, idCard);
+                                intent.putExtra(Constants.IT_NAME, s.split("\\|")[isIdCard ? 0 : 2]);
+                            } else if (mType == 2) {
+                                intent = new Intent(mContext, SelfAssessmentNewActivity.class);
+                                intent.putExtra(Constants.IT_ID_CARD, "330121195812231127");
+                            } else if (mType == 3) {
+                                intent = new Intent(mContext, DoctorActivity.class);
+                                intent.putExtra(Constants.IT_ID_CARD, idCard);
+                                intent.putExtra(Constants.IT_NAME, s.split("\\|")[isIdCard ? 0 : 2]);
+                            }
                             mContext.startActivity(intent);
                             dismiss();
                         }
