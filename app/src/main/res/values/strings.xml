@@ -74,4 +74,11 @@
     <string name="lc_demo_device_today_no_record">今日暂无录像</string>
     <string name="lc_demo_device_local_sd">无存储介质</string>
     <string name="lc_demo_device_cloud_not_open">云存储未开通</string>
+    <string name="alirtc_join_channel">开始</string>
+    <string name="alirtc_out">退出</string>
+    <string name="alirtc_mode">视频通话</string>
+    <string name="alirtc_permission">请先给予权限</string>
+    <string name="alirtc_enter">确定</string>
+    <string name="alirtc_chart_flip">是否镜像</string>
+    <string name="alirtc_chart_show_media_info">显示媒体信息</string>
 </resources>
