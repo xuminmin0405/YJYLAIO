@@ -15,6 +15,7 @@ public class Constants {
     //========== Api ==========
 
     public static final String API_BASE_URL = BuildConfig.DEBUG ? "http://192.168.1.20:8201/kyyth-mobile/" : "https://xhky.hzxh.gov.cn/kyyth-mobile/";
+    public static final String RTC_API_BASE_URL = BuildConfig.DEBUG ? "https://xhky.hzxh.gov.cn/zhy-cms/" : "https://xhky.hzxh.gov.cn/zhy-cms/";
     public static final int API_SUCCESS = 200;
 
     //========== Url ==========
